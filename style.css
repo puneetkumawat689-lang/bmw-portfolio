@@ -1,0 +1,1253 @@
+:root {
+    --bmw-blue: #0066b1;
+    --transition-speed: 0.4s;
+    --footer-bg: #111111;
+    --footer-text: #888888;
+    --bmw-blue: #0066b1;
+    --hover-white: #ffffff;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* navbar css start */
+
+
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    transition: all var(--transition-speed) ease-in-out;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.navbar-brand img {
+    transition: var(--transition-speed);
+}
+
+.navbar-brand:hover img {
+    transform: rotate(360deg) scale(1.1);
+}
+
+
+.nav-item {
+    margin: 0 12px;
+}
+
+.nav-link {
+    color: #222 !important;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 8px 0 !important;
+    transition: color 0.3s ease;
+}
+
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, var(--bmw-blue), #00aaff);
+    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 5px;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--bmw-blue) !important;
+}
+
+
+.slogan-text {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #666;
+    border-left: 1px solid #ddd;
+    padding-left: 15px;
+    margin-left: 15px;
+}
+
+
+@media (max-width: 991px) {
+    .slogan-text {
+        display: none;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .custom-navbar {
+        background: white;
+    }
+}
+
+
+.navbar-scrolled {
+    padding: 8px 0;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* navbar css end */
+
+
+/* hero section css start */
+
+.hero-section {
+    padding: 100px 0;
+    background: radial-gradient(circle at bottom right, #f0f4f8, #ffffff);
+    overflow: hidden;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hero-image-wrapper {
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+}
+
+
+.hero-title {
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: #262626;
+}
+
+.subtitle {
+    color: var(--bmw-blue);
+    font-weight: 700;
+    letter-spacing: 3px;
+    display: inline-block;
+    border-left: 3px solid var(--bmw-blue);
+    padding-left: 10px;
+}
+
+
+.btn-bmw-hero {
+    background-color: #262626;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn-bmw-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--bmw-blue);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.btn-bmw-hero:hover::before {
+    left: 0;
+}
+
+.btn-bmw-hero:hover {
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 102, 177, 0.3);
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .justify-content-center {
+        align-items: center !important;
+    }
+
+    .ps-5 {
+        padding-left: 0 !important;
+    }
+}
+
+/* hero section css end */
+
+
+
+.video-card {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+
+.video-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-card video {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+
+.video-card:hover video {
+    transform: scale(1.08);
+}
+
+
+.video-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    transform: skewX(-25deg);
+    transition: 0.6s;
+}
+
+.video-card:hover::after {
+    left: 125%;
+}
+
+.video-card .card-body {
+    padding: 25px 0;
+}
+
+.video-card h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.video-card:hover h4 {
+    color: var(--bmw-blue);
+}
+
+.video-card .card-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600 !important;
+    font-size: 1.4rem !important;
+    line-height: 1.3;
+    color: #262626;
+}
+
+
+.video-card .card-text::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--bmw-blue);
+    transition: width 0.3s;
+    margin-top: 10px;
+}
+
+.video-card:hover .card-text::after {
+    width: 40px;
+}
+
+
+
+.news-section-title {
+    font-weight: 200;
+    letter-spacing: 2px;
+    margin-left: 5%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.news-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #0066b1;
+}
+
+
+.news-card {
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.news-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+
+
+.news-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+}
+
+
+.news-card:hover img {
+    transform: scale(1.1);
+}
+
+.news-card:hover .news-overlay {
+    opacity: 1;
+}
+
+
+.news-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.news-card:hover .news-caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+.expert-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+
+.expert-video-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.expert-video-container:hover {
+    transform: scale(1.02);
+}
+
+
+.expert-content {
+    padding-left: 50px;
+}
+
+.expert-title {
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #262626;
+}
+
+
+.expert-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #262626;
+    transition: all 0.3s ease;
+}
+
+.arrow-circle {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.expert-link-wrapper:hover .arrow-circle {
+    background-color: #0066b1;
+    border-color: #0066b1;
+    color: white;
+    transform: translateX(10px);
+}
+
+
+.expert-link-text {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.expert-link-wrapper:hover .expert-link-text {
+    color: #0066b1;
+}
+
+
+@media (max-width: 768px) {
+    .expert-content {
+        padding-left: 15px;
+        margin-top: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .expert-title {
+        font-size: 2.2rem;
+    }
+}
+
+
+
+.podcast-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.podcast-intro h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #262626;
+}
+
+.podcast-intro h5 {
+    font-weight: 400;
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+
+.podcast-card {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.podcast-video-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+}
+
+.podcast-card video {
+    width: 100%;
+    filter: grayscale(30%);
+    transition: all 0.5s ease;
+}
+
+.podcast-card h5 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto;
+    transition: color 0.3s ease;
+}
+
+
+.podcast-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+}
+
+.podcast-card:hover video {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.podcast-card:hover h5 {
+    color: var(--bmw-blue);
+}
+
+
+.btn-podcast {
+    border: 2px solid #262626;
+    background: transparent;
+    color: #262626;
+    padding: 12px 30px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-podcast:hover {
+    background: #262626;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 991px) {
+    .podcast-intro {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}
+
+
+
+.models-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.models-header h1 {
+    font-weight: 200;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 5px;
+    color: #262626;
+    text-transform: uppercase;
+}
+
+
+.find-bmw-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #262626;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.find-bmw-link:hover {
+    color: var(--bmw-blue);
+    letter-spacing: 1px;
+}
+
+.arrow-icon {
+    width: 40px;
+    height: 2px;
+    background: #262626;
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.find-bmw-link:hover .arrow-icon {
+    background: var(--bmw-blue);
+    width: 60px;
+}
+
+
+.model-card {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    background: transparent;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.model-video-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.model-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.8s ease;
+}
+
+.model-card:hover video {
+    transform: scale(1);
+}
+
+.model-card .card-body {
+    padding: 30px 0;
+}
+
+.model-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.model-card .card-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+    margin-top: 10px;
+    color: #262626;
+    line-height: 1.2;
+}
+
+
+.model-card:hover {
+    transform: translateY(-10px);
+}
+
+
+@media (max-width: 768px) {
+    .models-header h1 {
+        font-size: 2rem;
+    }
+
+    .model-card .card-text {
+        font-size: 1.3rem !important;
+    }
+}
+
+
+
+
+.innovation-grid {
+    padding: 60px 0;
+}
+
+
+.innov-card {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.innov-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.innov-card:hover img {
+    transform: scale(1.15);
+}
+
+
+.innov-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 50%;
+}
+
+.innov-card:hover .innov-overlay {
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 102, 177, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+.innov-card h4 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.innov-card .card-text {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700 !important;
+    font-size: 1.6rem !important;
+    line-height: 1.2;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.innov-card:hover h4,
+.innov-card:hover .card-text {
+    transform: translateY(0);
+}
+
+
+@media (max-width: 991px) {
+
+    .innov-card {
+        height: 400px;
+    }
+}
+
+
+
+
+.lifestyle-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+
+.lifestyle-item {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-bottom: 30px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.media-container {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 4 / 5;
+}
+
+.lifestyle-item video,
+.lifestyle-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: all 0.6s ease;
+}
+
+
+.lifestyle-item:hover {
+    transform: translateY(-10px);
+}
+
+.lifestyle-item:hover video,
+.lifestyle-item:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+.lifestyle-item h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.lifestyle-item .card-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem !important;
+    line-height: 1.3;
+    color: #262626;
+    transition: color 0.3s;
+}
+
+.lifestyle-item:hover h4 {
+    color: var(--bmw-blue);
+}
+
+
+.media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lifestyle-item:hover .media-overlay {
+    opacity: 1;
+}
+
+
+@media (max-width: 576px) {
+    .lifestyle-item .card-text {
+        font-size: 1.2rem !important;
+    }
+}
+
+
+
+
+.tech-section {
+    padding: 60px 0;
+    background-color: #fdfdfd;
+}
+
+
+.tech-card {
+    border: none;
+    background: transparent;
+    transition: transform 0.4s ease;
+    margin-bottom: 30px;
+}
+
+
+.tech-video-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.tech-card video {
+    width: 100%;
+    display: block;
+    transition: transform 0.7s ease-in-out;
+}
+
+
+.tech-card:hover .tech-video-frame {
+    box-shadow: 0 15px 35px rgba(0, 102, 177, 0.15);
+}
+
+.tech-card:hover video {
+    transform: scale(1.05);
+}
+
+
+.tech-card h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--bmw-blue);
+    letter-spacing: 1.5px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.tech-card .card-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    line-height: 1.2;
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+}
+
+
+.tech-card:hover .card-text {
+    color: #000;
+}
+
+
+.reveal-line {
+    height: 2px;
+    width: 0;
+    background-color: var(--bmw-blue);
+    transition: width 0.4s ease;
+    margin-top: 15px;
+}
+
+.tech-card:hover .reveal-line {
+    width: 50px;
+}
+
+
+@media (max-width: 768px) {
+    .tech-card .card-text {
+        font-size: 1.2rem !important;
+    }
+}
+
+
+
+
+.discovery-card {
+    border: none;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-bottom: 30px;
+}
+
+.discovery-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.discovery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+    filter: brightness(0.9);
+}
+
+
+.discovery-card:hover {
+    transform: translateY(-12px);
+}
+
+.discovery-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+
+.discovery-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+.discovery-card:hover h4 {
+    color: var(--bmw-blue);
+}
+
+.discovery-card .card-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600 !important;
+    font-size: 1.4rem !important;
+    color: #262626;
+    line-height: 1.3;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .discovery-card .card-text {
+        font-size: 1.2rem !important;
+    }
+}
+
+
+
+.digital-section {
+    background-color: #000;
+    padding: 100px 0;
+    color: #fff;
+}
+
+.digital-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    height: 100%;
+}
+
+
+.digital-video-frame {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.digital-card video {
+    width: 100%;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+
+.digital-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--bmw-blue);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 102, 177, 0.2);
+}
+
+.digital-card:hover video {
+    transform: scale(1.1);
+}
+
+
+.digital-card h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--bmw-blue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.digital-card .card-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+
+.accent-line {
+    width: 0;
+    height: 3px;
+    background: var(--bmw-blue);
+    margin-top: 15px;
+    transition: width 0.4s ease;
+}
+
+.digital-card:hover .accent-line {
+    width: 60px;
+}
+
+
+@media (max-width: 768px) {
+    .digital-card .card-text {
+        font-size: 1.2rem !important;
+    }
+}
+
+
+
+
+.content-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.section-title {
+    font-weight: 200;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--bmw-dark);
+}
+
+.content-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+}
+
+.highlight-box {
+    background: #f8f9fa;
+    border-left: 4px solid var(--bmw-blue);
+    padding: 40px;
+    margin-top: 50px;
+    transition: transform 0.3s ease;
+}
+
+.highlight-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    min-width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--bmw-blue);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .content-text {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+}
+
+
+
+.custom-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 80px 0 30px;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid #333;
+}
+
+.footer-column h3 {
+    color: var(--hover-white);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+
+.footer-column a {
+    display: block;
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    width: fit-content;
+}
+
+
+.footer-column a:hover {
+    color: var(--hover-white);
+    transform: translateX(8px);
+}
+
+.footer-column a::before {
+    content: '>';
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    color: var(--bmw-blue);
+    transition: all 0.3s ease;
+}
+
+.footer-column a:hover::before {
+    opacity: 1;
+    left: -12px;
+}
+
+
+.social-links a {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+
+.social-links a:hover {
+    color: var(--bmw-blue);
+    border-bottom: 2px solid var(--bmw-blue);
+    transform: translateY(-3px);
+}
+
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #222;
+    font-size: 0.8rem;
+}
+
+.copy-text {
+    letter-spacing: 1px;
+}
+
+
+@media (max-width: 768px) {
+    .footer-column {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-column a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-column a:hover {
+        transform: translateX(0) scale(1.1);
+    }
+}
